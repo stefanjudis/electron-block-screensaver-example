@@ -10,7 +10,6 @@ const NativeImage      = require( 'native-image' );
 const powerSaveBlocker = require( 'power-save-blocker' );
 
 let appIcon        = null;
-let contextMenu    = null;
 let currentBlocker = null;
 
 /**
