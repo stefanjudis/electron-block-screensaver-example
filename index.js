@@ -14,7 +14,6 @@ let currentBlocker = null;
 
 /**
  * Icons to display inside of the tray
-require( 'crash-reporter' ).start();
  *
  * @type {Object}
  */
