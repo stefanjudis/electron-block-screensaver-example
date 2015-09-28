@@ -18,8 +18,8 @@ let currentBlocker = null;
  * @type {Object}
  */
 let icons = {
-  active    : NativeImage.createFromPath( './media/icon_active.png' ),
-  notActive : NativeImage.createFromPath( './media/icon.png' )
+  active    : NativeImage.createFromPath( `${__dirname}/media/icon_active.png` ),
+  notActive : NativeImage.createFromPath( `${__dirname}/media/icon.png` )
 }
 
 
@@ -52,9 +52,8 @@ function initTray() {
     app.dock.hide();
   }
 
-  appIcon = new Tray( './media/icon.png' );
-
-  appIcon.setToolTip( 'This is my application.' );
+  appIcon = new Tray( `${__dirname}/media/icon.png` );
+  appIcon.setToolTip( 'Block screensaver' );
   appIcon.setContextMenu( menus.notActive );
 }
 
