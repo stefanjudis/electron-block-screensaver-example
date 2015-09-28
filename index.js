@@ -2,6 +2,7 @@
 
 require( 'crash-reporter' ).start();
 
+const path             = require( 'path' );
 const app              = require( 'app' );
 const Menu             = require( 'menu' );
 const Tray             = require( 'tray' );
@@ -18,8 +19,8 @@ let currentBlocker = null;
  * @type {Object}
  */
 let icons = {
-  active    : NativeImage.createFromPath( `${__dirname}/media/icon_active.png` ),
-  notActive : NativeImage.createFromPath( `${__dirname}/media/icon.png` )
+  active    : NativeImage.createFromPath( path.join( __dirname, 'media', 'icon_active.png' ) ),
+  notActive : NativeImage.createFromPath( path.join( __dirname, 'media', 'icon.png' ) )
 }
 
 
@@ -52,7 +53,7 @@ function initTray() {
     app.dock.hide();
   }
 
-  appIcon = new Tray( `${__dirname}/media/icon.png` );
+  appIcon = new Tray( path.resolve( __dirname, 'media', 'icon.png' ) );
   appIcon.setToolTip( 'Block screensaver' );
   appIcon.setContextMenu( menus.notActive );
 }
